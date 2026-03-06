@@ -1,84 +1,178 @@
-﻿body {
-    background-color: #0d0d0d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+﻿/* 1. CONFIGURACIÓN */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Imagen */
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2000");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .contenedor-principal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.poste {
-    width: 20px;
-    height: 80px;
-    background: linear-gradient(#333, #000);
+/* 2. SENDA PEATONAL */
+.contenedor-principal::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  width: 200%;
+  height: 400px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 50px,
+    rgba(255, 255, 255, 0.8) 50px,
+    rgba(255, 255, 255, 0.8) 150px
+  );
+  transform: perspective(500px) rotateX(60deg);
+  z-index: 1;
 }
 
+/* 3. ESTRUCTURA DEL SEMÁFORO */
+.escenario {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+}
+
+/* Cartel de la Calle */
+.cartel-calle {
+  position: absolute;
+  left: 120px;
+  top: 20px;
+  background: #003399;
+  color: white;
+  padding: 8px 20px;
+  border: 3px solid white;
+  font-family: "Arial Black", sans-serif;
+  font-size: 18px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
+  white-space: nowrap;
+}
+
+/* Cuerpo Metálico */
 .cuerpo-semaforo {
-    background-color: #000;
-    padding: 20px;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border: 4px solid #1a1a1a;
+  background: #111;
+  padding: 25px 15px;
+  border-radius: 40px;
+  border: 5px solid #222;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.9),
+    inset 0 0 20px #000;
 }
 
+/* Luces y Brillos  */
 .luz {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    opacity: 0.2;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #1a1a1a;
+  position: relative;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 0 15px #000;
 }
 
-.roja { background-color: #ff0000; }
-.amarilla { background-color: #ffdd00; }
-.verde { background-color: #00ff00; }
-.purpura { background-color: #a020f0; }
-
-.roja.brillo { 
-    opacity: 1; 
-    box-shadow: 0 0 40px 15px rgba(255, 0, 0, 0.6); 
-}
-.amarilla.brillo { 
-    opacity: 1; 
-    box-shadow: 0 0 40px 15px rgba(255, 221, 0, 0.6); 
-}
-.verde.brillo { 
-    opacity: 1; 
-    box-shadow: 0 0 40px 15px rgba(0, 255, 0, 0.6); 
-}
-.purpura.brillo { 
-    opacity: 1; 
-    box-shadow: 0 0 40px 15px rgba(160, 32, 240, 0.6); 
+.reflejo {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 25%;
+  height: 20%;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
 }
 
+.roja.brillo {
+  background: #ff0000;
+  box-shadow:
+    0 0 80px 20px rgba(255, 0, 0, 0.6),
+    inset 0 0 25px #fff;
+}
+.amarilla.brillo {
+  background: #ffcc00;
+  box-shadow:
+    0 0 80px 20px rgba(255, 204, 0, 0.6),
+    inset 0 0 25px #fff;
+}
+.verde.brillo {
+  background: #00ff00;
+  box-shadow:
+    0 0 80px 20px rgba(0, 255, 0, 0.6),
+    inset 0 0 25px #fff;
+}
+.purpura.brillo {
+  background: #a020f0;
+  box-shadow:
+    0 0 80px 20px rgba(160, 32, 240, 0.6),
+    inset 0 0 25px #fff;
+}
+
+/* Poste y Base */
+.poste-vertical {
+  width: 35px;
+  height: 250px;
+  background: linear-gradient(90deg, #111, #555, #111);
+  margin-top: -5px;
+  border-left: 2px solid #000;
+}
+
+.base-suelo {
+  width: 160px;
+  height: 40px;
+  background: #222;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 4. BOTONES */
 .controles {
-    margin-top: 40px;
-    display: flex;
-    gap: 15px;
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 20px;
+  z-index: 20;
 }
 
 button {
-    padding: 12px 20px;
-    cursor: pointer;
-    background: #1a1a1a;
-    color: #00ff00;
-    border: 2px solid #00ff00;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: 0.3s;
+  background: rgba(0, 0, 0, 0.8);
+  color: #0f0;
+  border: 2px solid #0f0;
+  padding: 15px 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
 }
 
 button:hover {
-    background: #00ff00;
-    color: #000;
+  background: #0f0;
+  color: #000;
+  box-shadow: 0 0 20px #0f0;
 }

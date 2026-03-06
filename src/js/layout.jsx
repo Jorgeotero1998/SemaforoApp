@@ -2,11 +2,11 @@
 import Home from "./component/home.jsx";
 
 const Layout = () => {
-return (
-<div>
-<Home />
-</div>
-);
+  return (
+    <div className="layout-container">
+      <Home />
+    </div>
+  );
 };
 
 export default Layout;
