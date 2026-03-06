@@ -150,29 +150,57 @@ body {
 }
 
 /* 4. BOTONES */
+
 .controles {
   position: absolute;
-  bottom: 40px;
+  bottom: 50px;
   display: flex;
-  gap: 20px;
-  z-index: 20;
+  gap: 25px;
+  z-index: 30;
 }
 
-button {
-  background: rgba(0, 0, 0, 0.8);
-  color: #0f0;
-  border: 2px solid #0f0;
-  padding: 15px 30px;
-  font-weight: bold;
+.btn-interfaz {
+  /* Fuente */
+  font-family: "Arial Black", "Arial", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 8px;
+
+  /* Colores y Fondo */
+  background: #ffffff; /* Fondo blanco tipo cartel */
+  color: #000000; /* Texto negro */
+  border: 3px solid #000000;
+  padding: 12px 28px;
+  border-radius: 4px; /* Menos redondeado, más industrial */
   cursor: pointer;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
+
+  /* Efectos */
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.8);
+  transition: all 0.2s ease;
+  outline: none;
 }
 
-button:hover {
-  background: #0f0;
-  color: #000;
-  box-shadow: 0 0 20px #0f0;
+.btn-interfaz:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+  background: #f0f0f0;
+}
+
+.btn-interfaz:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+/* Estilo para el botón */
+.btn-interfaz.especial {
+  border-color: #a020f0;
+  color: #a020f0;
+  background: #111; /* Fondo oscuro para resaltar el púrpura */
+  box-shadow: 6px 6px 0px rgba(160, 32, 240, 0.4);
+}
+
+.btn-interfaz.especial:hover {
+  background: #a020f0;
+  color: #ffffff;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);
 }
