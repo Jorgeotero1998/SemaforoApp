@@ -14,3 +14,8 @@ Este es un proyecto que simula un semáforo funcional utilizando React y hooks p
 - JavaScript (JSX)
 - CSS3
 - Vite
+
+## Arranque 
+- Npm install
+- Npm run start
+  
