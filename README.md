@@ -3,7 +3,9 @@
 Este es un proyecto que simula un semáforo funcional utilizando React y hooks para el manejo de estados.
 
 ## Screenshots 
-<img width="1175" height="901" alt="Captura de pantalla 2026-03-09 162244" src="https://github.com/user-attachments/assets/6c441f81-690d-455d-bac9-0aa04b<img width="1698" height="867" alt="Captura de pantalla 2026-03-09 162128" src="https://github.com/user-attachments/assets/9b15f46e-c5fd-47ea-a8dc-8402c6bd1634" />
+<img width="1175" height="901" alt="Captura de pantalla 2026-03-09 162244" src="https://github.com/user-attachments/assets/5551b1a7-0626-49de-90e1-1d980fec35f2" />
+
+<img width="1698" height="867" alt="Captura de pantalla 2026-03-09 162128" src="https://github.com/user-attachments/assets/9b15f46e-c5fd-47ea-a8dc-8402c6bd1634" />
 3a7ef2" />
 <img width="1357" height="907" alt="Captura de pantalla 2026-03-09 162221" src="https://github.com/user-attachments/assets/ed2c851e-a1bf-4598-b48a-1be43088649a" />
 
