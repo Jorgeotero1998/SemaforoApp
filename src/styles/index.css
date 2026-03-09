@@ -55,22 +55,6 @@ body {
   filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
 }
 
-/* Cartel de la Calle */
-.cartel-calle {
-  position: absolute;
-  left: 120px;
-  top: 20px;
-  background: #003399;
-  color: white;
-  padding: 8px 20px;
-  border: 3px solid white;
-  font-family: "Arial Black", sans-serif;
-  font-size: 18px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-  transform: rotate(-2deg);
-  white-space: nowrap;
-}
-
 /* Cuerpo Metálico */
 .cuerpo-semaforo {
   background: #111;
